@@ -1,0 +1,18 @@
+{
+    "name": "Vitas/Wef",
+    "description": "this is a small project modeled after laravel",
+    "type": "library",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "xiaoe",
+            "email": "vitaszhuo@xiaoe-tech.com"
+        }
+    ],
+    "autoload":{
+      "psr-4":{
+          "Vitas\\Wef\\":"./src/"
+      }
+    },
+    "require": {}
+}
