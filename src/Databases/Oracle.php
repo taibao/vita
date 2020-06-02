@@ -1,9 +1,9 @@
 <?php
 
     namespace Vitas\Wef\Databases;
+    USE Vitas\Wef\Contracts\Databases\DB;
 
-
-    class Oracle
+    class Oracle implements DB
     {
         private $type;
 
@@ -12,9 +12,9 @@
             $this->type = 'oracle';
         }
 
-        public function demo()
+        public function demo($t=0)
         {
-            return 'oracle 操作的数据库 '.$this->type;
+            return 'oracle 操作的数据库 '.$this->type.":".$t;
         }
 
     }

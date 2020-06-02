@@ -11,7 +11,7 @@ namespace Vitas\Wef\Applications;
 use Vitas\Wef\Containers\Container;
 use Vitas\Wef\Databases\Mysql;
 use Vitas\Wef\Databases\Oracle;
-
+USE Vitas\Wef\Contracts\Databases\DB;
 
 //Container 提供初始
 class Application extends Container
@@ -34,7 +34,8 @@ class Application extends Container
         $bind = [
             //标识=>服务类
             // Mysql::class => 'Vitas\Wef\Databases\Mysql'
-            'db' => Mysql::class,
+            'db' => Oracle::class,
+            \Vitas\Wef\Databases\DB::class => Oracle::class, //接口指向的是oracle数据库
         ];
         foreach($bind as $key => $value){
             $this->bind($key,$value);
